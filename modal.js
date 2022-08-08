@@ -88,21 +88,14 @@ function closeModal(e) {
 }
 // FUNCTION CLOSING MODAL END
 
-
 // FUNCTION CLOSING THANKS MESSAGE
 /* When we click on the window or in the X, this window with close it*/
-function hideThanksMessage(){
-  thanksForResa.style.display="none";
-};
+function hideThanksMessage() {
+  thanksForResa.style.display = "none";
+}
 
 thanksForResa.addEventListener("click", hideThanksMessage);
 // FUNCTION CLOSING THANKS MESSAGE END
-
-
-
-
-
-
 
 // FUNCTION CLOSING THANKS MESSAGE END
 
