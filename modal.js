@@ -39,9 +39,11 @@ let closeBtn = document.querySelector(".close");
 let closeThanksMsg = document.querySelector(".close2");
 // CLOSING THANKS MESSAGE END
 /*************************************************************************/
+
 // DOM ELEMENTS END
 
 //***********************************************************************
+
 
 // Fonction Events SHOW MODAL WITH BUTTON
 
@@ -59,10 +61,12 @@ modalBtns.forEach(function (btn) {
 // FUNCTION FOR EACH BUTON END
 
 // Fonction Events SHOW MODAL WITH BUTTON END
+//***********************************************************************
 
 //***********************************************************************
 
 // SUBMITTING THE FORMULAR
+/*
 formEvenenment.addEventListener("submit", submitFormular);
 
 function submitFormular(e) {
@@ -75,7 +79,10 @@ function submitFormular(e) {
   thanksForResa.style.display = "block";
   // thanks message End
 }
+*/
 // SUBMITTING THE FORMULAR END
+
+//***********************************************************************
 
 // CLOSING modalBg
 closeBtn.addEventListener("click", closeModal);
@@ -89,7 +96,9 @@ function closeModal(e) {
 // FUNCTION CLOSING MODAL END
 
 // FUNCTION CLOSING THANKS MESSAGE
+
 /* When we click on the window or in the X, this window with close it*/
+
 function hideThanksMessage() {
   thanksForResa.style.display = "none";
 }
@@ -102,3 +111,37 @@ thanksForResa.addEventListener("click", hideThanksMessage);
 //***********************************************************************
 
 //***********************************************************************
+
+// Linking Formular with label
+
+//firstName Event
+
+const inputName = document.querySelector("#first");
+let firstName = "";
+
+
+inputName.addEventListener("input", function (e) {
+  firstName = e.target.value;
+});
+
+/*  Pour que submitFormular soit possible il faut que tout mes champs soit valide :
+ je veux que le champ firstName dont la valeur est "" dispose de deux caractères string minimum
+pour être valide et soumis à la validation du formulaire*/
+
+// SUBMITTING THE FORMULAR
+formEvenenment.addEventListener("submit", submitFormular);
+
+function submitFormular(e) {
+  /*if (firstName.value.length <2) {
+     }
+     console.log(firstName);*/
+  e.preventDefault(); // (Working like the return false)
+  //close modal
+  closeModal();
+  //close modal End
+
+  // thanks message
+  thanksForResa.style.display = "block";
+  // thanks message End
+}
+// SUBMITTING THE FORMULAR END
