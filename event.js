@@ -9,14 +9,26 @@ modalBtns.forEach(function (btn) {
 
 // SUBMITTING THE FORMULAR
 function submitFormular(e) {
-if(emptyFieldInput, true)
-{alert("fais ça bien !")
+if (formEvenenment.First.value <=2){ 
+    errorMessage();
+    alert("reveil")
+    e.preventDefault();
+  }
+  else{
 
-}
+    modalBg.style.display = "none";
+    thanksForResa.style.display = "block";
+    e.preventDefault();
+  }
+  }
 
-  e.preventDefault();
-  closeModal();
-  thanksForResa.style.display = "block";
+console.log(formEvenenment.First);
+//empty field : ne doit aps être vide, dois respecté certains caractères.
+
+
+
+function errorMessage() {
+  sendErrorMessage.style.display = "flex";
 }
 
 formEvenenment.addEventListener("submit", submitFormular);
@@ -38,16 +50,3 @@ thanksForResa.addEventListener("click", hideThanksMessage);
  il faut que tout mes champs soit valide :
  le champ firstName dont la valeur est "" dispose de deux caractères string minimum
   pour être valide et soumis à la validation du formulaire*/
-
-
-
-
-
-
-function emptyFieldInput() {
-  inputName.value == "";
-  missingFirstname.textContent = "Veuillez remplir le champ !";
-  missingFirstname.style.color = "red";
-  missingFirstname.style.fontSize = "13px";
-}
-emptyFieldInput();
