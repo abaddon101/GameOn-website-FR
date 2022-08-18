@@ -14,21 +14,13 @@ let selectedFormBtn = document.querySelector(".btn-submit");
 let closeBtn = document.querySelector(".close");
 // CLOSING THANKS MESSAGE
 let closeThanksMsg = document.querySelector(".close2");
-// SELECT INPUT FIRSTNAME
-let firstName = document.querySelector("#first");
-// SELECT INPUT LASTNAME
-let lastName = document.querySelector("#last");
-// SELECT INPUT LASTNAME
-let email = document.querySelector("#email");
-// SELECT INPUT BIRTHDATE
-let birthDate = document.querySelector("birthdate");
-// SELECT INPUT QUANTITY
-let numberOfTurnament = document.querySelector("quantity");
-//ARAY FIELD INPUT
-
 // SEND ERROR MESSAGE
 let sendErrorMessage = document.querySelector("#missingFirstname");
 
- 
+let first = document.querySelector("#first");
 
-console.log(formular.firstName);
+let email = document.querySelector("#email");
+
+console.log(first);
+
+

@@ -2,51 +2,40 @@
 function showModal() {
   modalBg.style.display = "block";
 }
-
 modalBtns.forEach(function (btn) {
   btn.addEventListener("click", showModal);
 });
-
 // SUBMITTING THE FORMULAR
 function submitFormular(e) {
-if (formEvenenment.First.value <=2){ 
+  if (
+    (formEvenenment.first.value <= 2,
+    formEvenenment.last.value <= 2,
+    formEvenenment.email.value == "")
+  ) {
     errorMessage();
-    alert("reveil")
+    alert("Merci de tout remplir");
     e.preventDefault();
-  }
-  else{
-
+  } else {
     modalBg.style.display = "none";
     thanksForResa.style.display = "block";
     e.preventDefault();
   }
-  }
+}
 
-console.log(formEvenenment.First);
-//empty field : ne doit aps être vide, dois respecté certains caractères.
-
-
-
+console.log(formEvenenment.Email);
+// Sends the error's message
 function errorMessage() {
   sendErrorMessage.style.display = "flex";
 }
-
+//Event submit the formular
 formEvenenment.addEventListener("submit", submitFormular);
-
-// CLOSING modalBg
-closeBtn.addEventListener("click", closeModal);
-
+// Close the modalBg
 function closeModal(e) {
   modalBg.style.display = "none";
 }
-
-// FUNCTION CLOSING THANKS MESSAGE
+closeBtn.addEventListener("click", closeModal);
+// Close the thanks message
 function hideThanksMessage() {
   thanksForResa.style.display = "none";
 }
 thanksForResa.addEventListener("click", hideThanksMessage);
-
-/*  Pour que submitFormular soit possible
- il faut que tout mes champs soit valide :
- le champ firstName dont la valeur est "" dispose de deux caractères string minimum
-  pour être valide et soumis à la validation du formulaire*/

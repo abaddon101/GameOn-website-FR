@@ -170,7 +170,7 @@ main {
   background-color: rgba(26, 39, 156, 0.4);
 }
 
-#missingFirstname{
+#missingFirstname {
   color: red;
   font-size: 13px;
   display: none;
@@ -178,7 +178,6 @@ main {
   margin-bottom: 15px;
   width: 100%;
   align-items: center;
-
 }
 
 .bground2 {
