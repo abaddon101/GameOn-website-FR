@@ -17,11 +17,8 @@ let closeThanksMsg = document.querySelector(".close2");
 // SEND ERROR MESSAGE
 let sendErrorMessage = document.querySelector("#missingFirstname");
 
-
-
 let first = document.querySelector("#first");
 let last = document.querySelector("#last");
 let email = document.querySelector("#email");
-
-
-
+let birthdate = document.querySelector("#birthdate");
+let quantity = document.querySelector("#quantity");

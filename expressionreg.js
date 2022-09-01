@@ -36,8 +36,6 @@ const validLastName = function (last) {
   let testLastName = lastRegExp.test(last.value);
   console.log(testLastName);
   return testLastName;
-
-  console.log (validLastName(formEvenenment.last))
 };
 
 //---------------------------------------------------------------------
@@ -52,7 +50,8 @@ formEvenenment.email.addEventListener("change", function () {
 const validEmail = function (email) {
   // creation reg exp for validation of the email
   let emailRegExp = new RegExp(
-    "^[a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+.[a-z]{2,10}$","i"
+    "^[a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+.[a-z]{2,10}$",
+    "i"
   );
   /*Mis en place du test de la variable email dont la valeur
     sera = à la variable emailRegexp (et dont le parametre
@@ -60,8 +59,45 @@ const validEmail = function (email) {
     grâce à un console.log*/
   let testEmail = emailRegExp.test(email.value);
   console.log(testEmail);
+  return testEmail;
 };
 
 //---------------------------------------------------------------------
 
+/* Mis en place d'un event qui s'appliquera lorsque le champs birthdate sera modifié
+grace au paramêtre change et à une focntion qui selectionnera la variable "validBirthDate*/
 
+formEvenenment.birthdate.addEventListener("change", function () {
+  validBirthdate(this);
+});
+/* La variable ou constante validBirthdate disposera d'une fonction
+dont le paramêtre sera la variable birthdate*/
+
+const validBirthdate = function (birthdate) {
+  // creation reg exp for validation of the birthdate
+  let birthdateRegExp = new RegExp("^[0-9]{4}-[0-9]{2}-[0-9]{2}$");
+
+  let testBirthDate = birthdateRegExp.test(birthdate.value);
+  console.log(testBirthDate);
+};
+
+//---------------------------------------------------------------------
+
+/* Mis en place d'un event qui s'appliquera lorsque le champs quantity sera modifié
+grace au paramêtre change et à une focntion qui selectionnera la variable "validQuantity*/
+
+formEvenenment.quantity.addEventListener("change", function () {
+  validQuantity(this);
+});
+/* La variable ou constante validQuantity disposera d'une fonction
+dont le paramêtre sera la variable birthdate*/
+
+const validQuantity = function (quantity) {
+  // creation reg exp for validation of the birthdate
+  let quantityRegExp = new RegExp("^[0-9]{1,2}$");
+
+  let testQuantity = quantityRegExp.test(quantity.value);
+  console.log(testQuantity);
+};
+
+//---------------------------------------------------------------------

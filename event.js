@@ -8,20 +8,16 @@ modalBtns.forEach(function (btn) {
 // SUBMITTING THE FORMULAR
 function submitFormular(e) {
   if (
-    (formEvenenment.first.value.lenght <= 2 ||
-      validLastName(formEvenenment.last) == false) ||
-    formEvenenment.email.value == "")
-   {
+    formEvenenment.first.value.lenght <= 2 ||
+    validLastName(formEvenenment.last) == false ||
+    formEvenenment.email.value == "" ||
+    formEvenenment.birthdate.value == "" ||
+    formEvenenment.quantity.value == ""
+  ) {
     errorMessage();
     alert("Merci de tout remplir");
     e.preventDefault();
   } else {
-    /*else if(testFirstName.value == false){
-    
-    alert("WOOOOOOOOOOW");
-    e.preventDefault();
-
-  }*/
     modalBg.style.display = "none";
     thanksForResa.style.display = "block";
     e.preventDefault();
