@@ -12,7 +12,8 @@ function submitFormular(e) {
     validLastName(formEvenenment.last) == false ||
     formEvenenment.email.value == "" ||
     formEvenenment.birthdate.value == "" ||
-    formEvenenment.quantity.value == ""
+    formEvenenment.quantity.value == "" ||
+    formEvenenment.location.value == "" 
   ) {
     errorMessage();
     alert("Merci de tout remplir");
@@ -24,7 +25,6 @@ function submitFormular(e) {
   }
 }
 
-console.log(submitFormular);
 console.log(formEvenenment.last);
 console.log(formEvenenment.email);
 
@@ -44,3 +44,5 @@ function hideThanksMessage() {
   thanksForResa.style.display = "none";
 }
 thanksForResa.addEventListener("click", hideThanksMessage);
+
+// test if button are checked
