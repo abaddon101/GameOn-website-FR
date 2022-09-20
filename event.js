@@ -13,7 +13,7 @@ function submitFormular(e) {
     formEvenenment.email.value == "" ||
     formEvenenment.birthdate.value == "" ||
     formEvenenment.quantity.value == "" ||
-    formEvenenment.location.value == "" 
+    validRadio() == false
   ) {
     errorMessage();
     alert("Merci de tout remplir");
@@ -27,6 +27,8 @@ function submitFormular(e) {
 
 console.log(formEvenenment.last);
 console.log(formEvenenment.email);
+console.log(radios);
+console.log(formEvenenment.location);
 
 // Sends the error's message
 function errorMessage() {
@@ -45,4 +47,36 @@ function hideThanksMessage() {
 }
 thanksForResa.addEventListener("click", hideThanksMessage);
 
-// test if button are checked
+// Validation of radios button
+/* Je veux que lorsqu'on selectionne un bouton radio,
+ s'il est coché la propriété value va contenir sa valeur*/
+
+let validRadio = function validLocation() {
+  for (let i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      console.log(true);
+      return true;
+    }
+  }
+  console.log(false);
+  return false;
+};
+
+// ===> supprimé car bloquait l'execution du code et des tests //
+/*validRadio.addEventListener("change", function () {
+  validQuantity(this);
+  validRadio;
+});
+*/
+// ===> supprimé car bloquait l'execution du code et des tests //
+
+let getValue = document.querySelector("input[name='location']:checked");
+
+function getTheValue() {
+  if (getValue != null) {
+    console.log("le btn est selectionné");
+  } else {
+    console.log("recommencez");
+    return false;
+  }
+}
