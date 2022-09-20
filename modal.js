@@ -23,6 +23,5 @@ let email = document.querySelector("#email");
 let birthdate = document.querySelector("#birthdate");
 let quantity = document.querySelector("#quantity");
 let radios = document.querySelectorAll("input[name='location']");
-
-
-
+let checkBoxCgu = document.querySelector("#checkbox1");
+let checkBoxEvents = document.querySelector("#checkbox2");

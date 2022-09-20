@@ -13,7 +13,8 @@ function submitFormular(e) {
     formEvenenment.email.value == "" ||
     formEvenenment.birthdate.value == "" ||
     formEvenenment.quantity.value == "" ||
-    validRadio() == false
+    validRadio() == false ||
+    validCgu() == false
   ) {
     errorMessage();
     alert("Merci de tout remplir");
@@ -74,9 +75,39 @@ let getValue = document.querySelector("input[name='location']:checked");
 
 function getTheValue() {
   if (getValue != null) {
-    console.log("le btn est selectionné");
+    console.log("Une ville à été selectionné, merci");
   } else {
     console.log("recommencez");
     return false;
   }
 }
+
+// Validation of the checkbox
+
+/*let checked = document.querySelector("#checkbox1:checked");
+console.log(checked);
+
+function validCgu() {
+  for (let i = 0; i < checkBoxCgu.length; i++)
+  if (checkBoxCgu[i].checked) {
+    console.log(true);
+    return true;
+  } else {
+    console.log(false);
+    return false;
+  }
+};
+
+*/
+
+function validCgu(){
+  // check if checkbox is checked
+ 
+  if (!checkBoxCgu.checked){
+      console.log(false);
+      return false;
+  }else{
+    console.log(true);
+      return true;
+  }
+};
