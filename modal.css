@@ -170,7 +170,76 @@ main {
   background-color: rgba(26, 39, 156, 0.4);
 }
 
-#missingFirstname {
+.missingField {
+  color: red;
+  font-size: 13px;
+  display: none;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+.missingFirstName {
+  color: red;
+  font-size: 13px;
+  display: none;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 100%;
+  align-items: center;
+}
+.missingLastName {
+  color: red;
+  font-size: 13px;
+  display: none;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+.missingEmail {
+  color: red;
+  font-size: 13px;
+  display: none;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+.missingBirthdate {
+  color: red;
+  font-size: 13px;
+  display: none;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+.missingQuantity {
+  color: red;
+  font-size: 13px;
+  display: none;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+.missingLocation {
+  color: red;
+  font-size: 13px;
+  display: none;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+.missingCgu {
   color: red;
   font-size: 13px;
   display: none;

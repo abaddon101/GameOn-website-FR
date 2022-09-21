@@ -33,7 +33,19 @@ console.log(formEvenenment.location);
 
 // Sends the error's message
 function errorMessage() {
-  sendErrorMessage.style.display = "flex";
+  if (formEvenenment.first.value.lenght <= 2) {
+    sendMissingFirstName.style.display = "flex";
+  }
+
+  /*
+  sendErrorMessage[0].style.display = "flex";
+  sendErrorMessage[1].style.display = "flex";
+  sendErrorMessage[2].style.display = "flex";
+  sendErrorMessage[3].style.display = "flex";
+  sendErrorMessage[4].style.display = "flex";
+  sendErrorMessage[5].style.display = "flex";
+  sendErrorMessage[6].style.display = "flex";
+  */
 }
 //Event submit the formular
 formEvenenment.addEventListener("submit", submitFormular);
@@ -100,14 +112,14 @@ function validCgu() {
 
 */
 
-function validCgu(){
+function validCgu() {
   // check if checkbox is checked
- 
-  if (!checkBoxCgu.checked){
-      console.log(false);
-      return false;
-  }else{
+
+  if (!checkBoxCgu.checked) {
+    console.log(false);
+    return false;
+  } else {
     console.log(true);
-      return true;
+    return true;
   }
-};
+}

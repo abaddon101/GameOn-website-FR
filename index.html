@@ -61,6 +61,10 @@
                   name="first"
                   minlength="2"
                 /><br />
+                <span class="missingFirstName"
+                  ><i class="fa-solid fa-triangle-exclamation"></i>
+                  <p>Veuillez rentrer au moins deux lettres</p></span
+                >
               </div>
 
               <!--Lastname-->
@@ -73,6 +77,10 @@
                   name="last"
                   minlength="2"
                 /><br />
+                <span class="missingLastName"
+                  ><i class="fa-solid fa-triangle-exclamation"></i>
+                  <p>Veuillez rentrer au moins deux lettres</p></span
+                >
               </div>
 
               <!--Email-->
@@ -84,6 +92,10 @@
                   id="email"
                   name="email"
                 /><br />
+                <span class="missingEmail"
+                  ><i class="fa-solid fa-triangle-exclamation"></i>
+                  <p>Veuillez saisir une adresse valide</p></span
+                >
               </div>
 
               <!--Birthdate-->
@@ -96,6 +108,10 @@
                   name="birthdate"
                   maxlength="8"
                 /><br />
+                <span class="missingBirthdate"
+                  ><i class="fa-solid fa-triangle-exclamation"></i>
+                  <p>Veuillez insérer une date de naissance</p></span
+                >
               </div>
 
               <!--Quantity-->
@@ -112,6 +128,13 @@
                   min="0"
                   max="99"
                 />
+                <span class="missingQuantity"
+                  ><i class="fa-solid fa-triangle-exclamation"></i>
+                  <p>
+                    Veuillez indiquez à combien de tournois vous avez déjà
+                    participé
+                  </p></span
+                >
               </div>
 
               <p class="text-label">
@@ -183,6 +206,10 @@
                 <label class="checkbox-label" for="location6"
                   ><span class="checkbox-icon"></span>Portland</label
                 >
+                <span class="missingLocation"
+                  ><i class="fa-solid fa-triangle-exclamation"></i>
+                  <p>Veuillez séléctionner une ville</p></span
+                >
               </div>
 
               <div class="formData">
@@ -209,9 +236,11 @@
                 </label>
                 <br />
               </div>
-              <span id="missingFirstname"
+              <span class="missingCgu"
                 ><i class="fa-solid fa-triangle-exclamation"></i>
-                <p>Veuillez remplir tout les champs !</p></span
+                <p>
+                  Veuillez accepter les conditions genérales d'utilisation
+                </p></span
               >
 
               <input id="btn-submit" type="submit" value="C'est parti" />
