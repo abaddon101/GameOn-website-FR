@@ -15,6 +15,8 @@ const validFirstname = function (first) {
           grâce à un console.log*/
   let testFirstName = firstRegExp.test(first.value);
   console.log(testFirstName);
+  return testFirstName;
+  
 };
 
 //---------------------------------------------------------------------

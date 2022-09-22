@@ -15,16 +15,13 @@ let closeBtn = document.querySelector(".close");
 // CLOSING THANKS MESSAGE
 let closeThanksMsg = document.querySelector(".close2");
 // SEND ERROR MESSAGE
-let sendErrorMessage = document.querySelectorAll(".missingField");
-let sendMissingFirstName = document.querySelector(".missingFirstName");
-let sendMissingLastName = document.querySelector(".missingLastName");
-let sendMissingEmail = document.querySelector(".missingEmail");
-let sendMissingBirthdate = document.querySelector(".missingBirthdate");
-let sendMissingQuantity = document.querySelector(".missingQuantity");
-let sendMissingLocation = document.querySelector(".missingLocation");
-let sendMissingCgu = document.querySelector(".missingCgu");
-
-// SEND
+let sendMissingFirstName = document.querySelector("#missingFirstName");
+let sendMissingLastName = document.querySelector("#missingLastName");
+let sendMissingEmail = document.querySelector("#missingEmail");
+let sendMissingBirthdate = document.querySelector("#missingBirthdate");
+let sendMissingQuantity = document.querySelector("#missingQuantity");
+let sendMissingLocation = document.querySelector("#missingLocation");
+let sendMissingCgu = document.querySelector("#missingCgu");
 // SELECTION OF THE FORMULAR ELEMENTS
 let first = document.querySelector("#first");
 let last = document.querySelector("#last");

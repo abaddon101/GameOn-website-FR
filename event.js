@@ -1,3 +1,8 @@
+console.log(formEvenenment.last);
+console.log(formEvenenment.email);
+console.log(radios);
+console.log(formEvenenment.location);
+
 // Fonction Events SHOW MODAL WITH BUTTON
 function showModal() {
   modalBg.style.display = "block";
@@ -5,10 +10,11 @@ function showModal() {
 modalBtns.forEach(function (btn) {
   btn.addEventListener("click", showModal);
 });
+
 // SUBMITTING THE FORMULAR
 function submitFormular(e) {
   if (
-    formEvenenment.first.value.lenght <= 2 ||
+    validFirstname(formEvenenment.first) == false ||
     validLastName(formEvenenment.last) == false ||
     formEvenenment.email.value == "" ||
     formEvenenment.birthdate.value == "" ||
@@ -26,27 +32,68 @@ function submitFormular(e) {
   }
 }
 
-console.log(formEvenenment.last);
-console.log(formEvenenment.email);
-console.log(radios);
-console.log(formEvenenment.location);
+/* if my input is empty then send message error,
+ and if my input is full then cancel the error message
+*/
+// function checkIf() {
+//   if (!formEvenenment.first.value.lenght <= 2) {
+//     sendMissingFirstName.style.display = "flex";
+//     return false;
+//   }
+// }
 
-// Sends the error's message
+// Sends the error's message if the field is empty/don't respect the conditions and let it go if my fields respect the conditions
 function errorMessage() {
-  if (formEvenenment.first.value.lenght <= 2) {
-    sendMissingFirstName.style.display = "flex";
-  }
+  errorMessageFirstName();
+  errorMessageLastName();
+  errorMessageEmail();
+  errorMessageBirthDate();
 
-  /*
-  sendErrorMessage[0].style.display = "flex";
-  sendErrorMessage[1].style.display = "flex";
-  sendErrorMessage[2].style.display = "flex";
-  sendErrorMessage[3].style.display = "flex";
-  sendErrorMessage[4].style.display = "flex";
-  sendErrorMessage[5].style.display = "flex";
-  sendErrorMessage[6].style.display = "flex";
-  */
+  // sendMissingQuantity.style.display = "flex";
+  // sendMissingLocation.style.display = "flex";
+  // sendMissingCgu.style.display = "flex";
 }
+
+function errorMessageFirstName(e) {
+  if (validFirstname(formEvenenment.first) == false) {
+    sendMissingFirstName.style.display = "flex";
+    return false;
+  } else {
+    sendMissingFirstName.style.display = "none";
+    return true;
+  }
+};
+
+function errorMessageLastName(e) {
+  if (validLastName(formEvenenment.last) == false) {
+    sendMissingLastName.style.display = "flex";
+    return false;
+  } else {
+    sendMissingLastName.style.display = "none";
+    return true;
+  }
+};
+
+function errorMessageEmail(e) {
+  if (formEvenenment.email.value == "") {
+    sendMissingEmail.style.display = "flex";
+    return false;
+  } else {
+    sendMissingEmail.style.display = "none";
+    return true;
+  }
+};
+
+function errorMessageBirthDate(e) {
+  if (formEvenenment.birthdate.value == "") {
+    sendMissingBirthdate.style.display = "flex";
+    return false;
+  } else {
+    sendMissingFirstName.style.display = "none";
+    return true;
+  }
+};
+
 //Event submit the formular
 formEvenenment.addEventListener("submit", submitFormular);
 // Close the modalBg
