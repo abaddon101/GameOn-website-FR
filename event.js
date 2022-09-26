@@ -65,10 +65,11 @@ function errorMessageFirstName() {
   if (validFirstname(formEvenenment.first) == false) {
     console.log("flex");
     errorFieldElement.style.display = "flex";
-
+    first.style.border = "2px solid red";
     return false;
   } else {
     console.log("felx2");
+    first.style.border = "none";
     errorFieldElement.style.display = "none";
     return true;
   }
@@ -77,9 +78,11 @@ function errorMessageFirstName() {
 function errorMessageLastName() {
   if (validLastName(formEvenenment.last) == false) {
     sendMissingLastName.style.display = "flex";
+    last.style.border = "2px solid red";
     return false;
   } else {
     sendMissingLastName.style.display = "none";
+    last.style.border = "none";
     return true;
   }
 }
@@ -87,9 +90,11 @@ function errorMessageLastName() {
 function errorMessageEmail() {
   if (formEvenenment.email.value == "") {
     sendMissingEmail.style.display = "flex";
+    email.style.border = "2px solid red";
     return false;
   } else {
     sendMissingEmail.style.display = "none";
+    email.style.border = "none";
     return true;
   }
 }
@@ -97,9 +102,11 @@ function errorMessageEmail() {
 function errorMessageBirthDate() {
   if (formEvenenment.birthdate.value == "") {
     sendMissingBirthdate.style.display = "flex";
+    birthdate.style.border = "2px solid red";
     return false;
   } else {
     sendMissingBirthdate.style.display = "none";
+    birthdate.style.border = "none";
     return true;
   }
 }
@@ -107,9 +114,11 @@ function errorMessageBirthDate() {
 function errorMessageQuantity() {
   if (formEvenenment.quantity.value == "") {
     sendMissingQuantity.style.display = "flex";
+    quantity.style.border = "2px solid red";
     return false;
   } else {
     sendMissingQuantity.style.display = "none";
+    quantity.style.border = "none";
     return true;
   }
 }
