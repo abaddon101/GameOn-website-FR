@@ -23,7 +23,7 @@ function submitFormular(e) {
     validCgu() == false
   ) {
     errorMessage();
-    alert("Merci de tout remplir");
+
     e.preventDefault();
   } else {
     modalBg.style.display = "none";
@@ -48,23 +48,33 @@ function errorMessage() {
   errorMessageLastName();
   errorMessageEmail();
   errorMessageBirthDate();
+  errorMessageQuantity();
+  errorMessageLocation();
+  errorMessageCgu();
 
   // sendMissingQuantity.style.display = "flex";
   // sendMissingLocation.style.display = "flex";
   // sendMissingCgu.style.display = "flex";
 }
 
-function errorMessageFirstName(e) {
+function errorMessageFirstName() {
+  let errorField = formEvenenment.first.dataset.errorField;
+  console.log(errorField);
+  errorFieldElement = document.querySelector(errorField);
+  console.log(errorFieldElement);
   if (validFirstname(formEvenenment.first) == false) {
-    sendMissingFirstName.style.display = "flex";
+    console.log("flex");
+    errorFieldElement.style.display = "flex";
+
     return false;
   } else {
-    sendMissingFirstName.style.display = "none";
+    console.log("felx2");
+    errorFieldElement.style.display = "none";
     return true;
   }
-};
+}
 
-function errorMessageLastName(e) {
+function errorMessageLastName() {
   if (validLastName(formEvenenment.last) == false) {
     sendMissingLastName.style.display = "flex";
     return false;
@@ -72,9 +82,9 @@ function errorMessageLastName(e) {
     sendMissingLastName.style.display = "none";
     return true;
   }
-};
+}
 
-function errorMessageEmail(e) {
+function errorMessageEmail() {
   if (formEvenenment.email.value == "") {
     sendMissingEmail.style.display = "flex";
     return false;
@@ -82,17 +92,47 @@ function errorMessageEmail(e) {
     sendMissingEmail.style.display = "none";
     return true;
   }
-};
+}
 
-function errorMessageBirthDate(e) {
+function errorMessageBirthDate() {
   if (formEvenenment.birthdate.value == "") {
     sendMissingBirthdate.style.display = "flex";
     return false;
   } else {
-    sendMissingFirstName.style.display = "none";
+    sendMissingBirthdate.style.display = "none";
     return true;
   }
-};
+}
+
+function errorMessageQuantity() {
+  if (formEvenenment.quantity.value == "") {
+    sendMissingQuantity.style.display = "flex";
+    return false;
+  } else {
+    sendMissingQuantity.style.display = "none";
+    return true;
+  }
+}
+
+function errorMessageLocation() {
+  if (validRadio() == false) {
+    sendMissingLocation.style.display = "flex";
+    return false;
+  } else {
+    sendMissingLocation.style.display = "none";
+    return true;
+  }
+}
+
+function errorMessageCgu() {
+  if (validCgu() == false) {
+    sendMissingCgu.style.display = "flex";
+    return false;
+  } else {
+    sendMissingCgu.style.display = "none";
+    return true;
+  }
+}
 
 //Event submit the formular
 formEvenenment.addEventListener("submit", submitFormular);
