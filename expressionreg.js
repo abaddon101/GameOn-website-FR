@@ -1,18 +1,18 @@
 //---------------------------------------------------------------------
-/* MEP d'un event qui s'appliquera quand le champs prénom sera modifié
-grace au parametre change et grace à une fonction qui selectionnera this variable "validFirst"*/
+/* set up an event that will apply as the first name field will be changed
+thanks to the change parameter and thanks to a function that will select this variable "validFirst"*/
 formEvenenment.first.addEventListener("change", function () {
   validFirstname(this);
 });
-/* La variable ou constante validFirst disposera d'une fonction
-           dont le paramêtre sera la variable first*/
+/* The variable or constant validFirst will have a function
+whose parameter will be the first variable*/
 const validFirstname = function (first) {
   // creation reg exp for validation of the first
   let firstRegExp = new RegExp("^[a-zA-Z]{2,}$", "i");
-  /*Mis en place du test de la variable first dont la valeur
-          sera = à la variable firstRegExp (et dont le parametre
-          sera la valeur de la variable first)
-          grâce à un console.log*/
+  /*Implemented the test of the first variable whose value
+          will = to the variable firstRegExp (and whose parameter
+          will be the value of the variable first)
+          thanks to a.log console*/
   let testFirstName = firstRegExp.test(first.value);
   console.log(testFirstName);
   return testFirstName;
@@ -20,20 +20,20 @@ const validFirstname = function (first) {
 
 //---------------------------------------------------------------------
 
-/* MEP d'un event qui s'appliquera quand le champs prénom sera modifié
-         grace au parametre change et à une fonction qui selectionnera this variable "validFirst"*/
+/* MEP of an event that will apply when the first name field is modified
+         thanks to the change parameter and a function that selects this variable "validFirst"*/
 formEvenenment.last.addEventListener("change", function () {
   validLastName(this);
 });
-/* La variable ou constante validFirst disposera d'une fonction
-             dont le paramêtre sera la variable last*/
+/* The variable or constant validFirst will have a function
+             whose parameter will be the last variable*/
 const validLastName = function (last) {
   // creation reg exp for validation of the last
   let lastRegExp = new RegExp("^[a-zA-Z]{2,}$", "i");
-  /*Mis en place du test de la variable last dont la valeur
-            sera = à la variable lastRegExp (et dont le parametre
-            sera la valeur de la variable last)
-            grâce à un console.log*/
+  /*Implemented the last variable test whose value
+            will = to the variable lastRegExp (and whose parameter
+            will be the value of the last variable)
+            thanks to a.log console*/
   let testLastName = lastRegExp.test(last.value);
   console.log(testLastName);
   return testLastName;
@@ -41,23 +41,23 @@ const validLastName = function (last) {
 
 //---------------------------------------------------------------------
 
-/* MEP d'un event qui s'appliquera quand le champs email sera modifié
-   grace au parametre change et à une fonction qui selectionnera this variable "validEmail"*/
+/* MEP of an event that will apply when the email field is modified
+   thanks to the change parameter and a function that selects this variable "validEmail"*/
 formEvenenment.email.addEventListener("change", function () {
   validEmail(this);
 });
-/* La variable ou constante validEmail disposera d'une fonction
-     dont le paramêtre sera la variable email*/
+/* The variable or constant validEmail will have a function
+     whose parameter will be the email variable*/
 const validEmail = function (email) {
   // creation reg exp for validation of the email
   let emailRegExp = new RegExp(
     "^[a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+.[a-z]{2,10}$",
     "i"
   );
-  /*Mis en place du test de la variable email dont la valeur
-    sera = à la variable emailRegexp (et dont le parametre
-    sera la valeur de la variable email)
-    grâce à un console.log*/
+  /*Implemented the test of the email variable whose value
+    will = to the variable emailRegexp (and whose parameter
+    will be the value of the email variable)
+    thanks to a.log console*/
   let testEmail = emailRegExp.test(email.value);
   console.log(testEmail);
   return testEmail;
@@ -65,14 +65,14 @@ const validEmail = function (email) {
 
 //---------------------------------------------------------------------
 
-/* Mis en place d'un event qui s'appliquera lorsque le champs birthdate sera modifié
-grace au paramêtre change et à une focntion qui selectionnera la variable "validBirthDate*/
+/* Set up an event that will apply when the birthdate field is changed
+thanks to the change parameter and to a focntion that will select the variable "validBirthDate*/
 
 formEvenenment.birthdate.addEventListener("change", function () {
   validBirthdate(this);
 });
-/* La variable ou constante validBirthdate disposera d'une fonction
-dont le paramêtre sera la variable birthdate*/
+/* The validBirthdate variable or constant will have a function
+whose parameter will be the variable birthdate*/
 
 const validBirthdate = function (birthdate) {
   // creation reg exp for validation of the birthdate
@@ -84,14 +84,14 @@ const validBirthdate = function (birthdate) {
 
 //---------------------------------------------------------------------
 
-/* Mis en place d'un event qui s'appliquera lorsque le champs quantity sera modifié
-grace au paramêtre change et à une focntion qui selectionnera la variable "validQuantity*/
+/* Set up an event that will apply when the quantity field is modified
+thanks to the change parameter and to a focntion that will select the variable "validQuantity*/
 
 formEvenenment.quantity.addEventListener("change", function () {
   validQuantity(this);
 });
-/* La variable ou constante validQuantity disposera d'une fonction
-dont le paramêtre sera la variable birthdate*/
+/* The variable or constant validQuantity will have a function
+whose parameter will be the variable birthdate*/
 
 const validQuantity = function (quantity) {
   // creation reg exp for validation of the birthdate

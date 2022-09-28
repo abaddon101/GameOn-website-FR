@@ -1,8 +1,3 @@
-console.log(formEvenenment.last);
-console.log(formEvenenment.email);
-console.log(radios);
-console.log(formEvenenment.location);
-
 // Fonction Events SHOW MODAL WITH BUTTON
 function showModal() {
   modalBg.style.display = "block";
@@ -11,7 +6,22 @@ modalBtns.forEach(function (btn) {
   btn.addEventListener("click", showModal);
 });
 
-// SUBMITTING THE FORMULAR
+//Event submit the formular
+formEvenenment.addEventListener("submit", submitFormular);
+
+// Close the modalBg
+function closeModal(e) {
+  modalBg.style.display = "none";
+}
+closeBtn.addEventListener("click", closeModal);
+
+// Close the thanks message
+function hideThanksMessage() {
+  thanksForResa.style.display = "none";
+}
+thanksForResa.addEventListener("click", hideThanksMessage);
+
+// Submitting the formular
 function submitFormular(e) {
   if (
     validFirstname(formEvenenment.first) == false ||
@@ -31,18 +41,14 @@ function submitFormular(e) {
     e.preventDefault();
   }
 }
+console.log(formEvenenment.last);
+console.log(formEvenenment.email);
+console.log(radios);
+console.log(formEvenenment.location);
 
-/* if my input is empty then send message error,
- and if my input is full then cancel the error message
-*/
-// function checkIf() {
-//   if (!formEvenenment.first.value.lenght <= 2) {
-//     sendMissingFirstName.style.display = "flex";
-//     return false;
-//   }
-// }
-
-// Sends the error's message if the field is empty/don't respect the conditions and let it go if my fields respect the conditions
+// Function error'message
+/* Sends the error's message if the field is empty/don't respect the conditions
+ and let it go if my fields respect the conditions*/
 function errorMessage() {
   errorMessageFirstName();
   errorMessageLastName();
@@ -51,12 +57,10 @@ function errorMessage() {
   errorMessageQuantity();
   errorMessageLocation();
   errorMessageCgu();
-
-  // sendMissingQuantity.style.display = "flex";
-  // sendMissingLocation.style.display = "flex";
-  // sendMissingCgu.style.display = "flex";
 }
 
+/*Conditions of the functions in the errorMessage Function */
+// firstName
 function errorMessageFirstName() {
   let errorField = formEvenenment.first.dataset.errorField;
   console.log(errorField);
@@ -74,7 +78,7 @@ function errorMessageFirstName() {
     return true;
   }
 }
-
+// lastName
 function errorMessageLastName() {
   if (validLastName(formEvenenment.last) == false) {
     sendMissingLastName.style.display = "flex";
@@ -87,6 +91,7 @@ function errorMessageLastName() {
   }
 }
 
+// email
 function errorMessageEmail() {
   if (formEvenenment.email.value == "") {
     sendMissingEmail.style.display = "flex";
@@ -99,6 +104,7 @@ function errorMessageEmail() {
   }
 }
 
+// birthDate
 function errorMessageBirthDate() {
   if (formEvenenment.birthdate.value == "") {
     sendMissingBirthdate.style.display = "flex";
@@ -111,6 +117,7 @@ function errorMessageBirthDate() {
   }
 }
 
+// quantity
 function errorMessageQuantity() {
   if (formEvenenment.quantity.value == "") {
     sendMissingQuantity.style.display = "flex";
@@ -123,42 +130,29 @@ function errorMessageQuantity() {
   }
 }
 
-function errorMessageLocation() {
-  if (validRadio() == false) {
-    sendMissingLocation.style.display = "flex";
-    return false;
-  } else {
-    sendMissingLocation.style.display = "none";
-    return true;
-  }
-}
-
-function errorMessageCgu() {
-  if (validCgu() == false) {
-    sendMissingCgu.style.display = "flex";
-    return false;
-  } else {
-    sendMissingCgu.style.display = "none";
-    return true;
-  }
-}
-
-//Event submit the formular
-formEvenenment.addEventListener("submit", submitFormular);
-// Close the modalBg
-function closeModal(e) {
-  modalBg.style.display = "none";
-}
-closeBtn.addEventListener("click", closeModal);
-// Close the thanks message
-function hideThanksMessage() {
-  thanksForResa.style.display = "none";
-}
-thanksForResa.addEventListener("click", hideThanksMessage);
-
 // Validation of radios button
-/* Je veux que lorsqu'on selectionne un bouton radio,
- s'il est coché la propriété value va contenir sa valeur*/
+/* We Need to create a variable validRadio, his value will be the function validLocation
+Then, We create a boucle for radios'buttons for check if they have been really checked.
+For that,
+With a "for" with a variable,
+ The conventions says to give as name is "i" and his value will be initialize at zero.
+ "let i = 0"
+ Then,
+ The value of  "i" will be inferior to the nomber of other options, so : not checked !
+ For each option, we proceed to a test for know if the option is checked or no
+ Then we go to the next option in  by incrementing the variable "i" for each iteration.
+ Then, the "if" will check the [i] whish is the property of radio,
+ And we finish with a console.log for the test of the variable validRadio.
+*/
+
+// ===> Deleted because useless for the test of the location : if a city is checked <== //
+// function checkIf() {
+//   if (!formEvenenment.first.value.lenght <= 2) {
+//     sendMissingFirstName.style.display = "flex";
+//     return false;
+//   }
+// }
+// ===> Deleted because useless for the test of the location : if a city is checked <== //
 
 let validRadio = function validLocation() {
   for (let i = 0; i < radios.length; i++) {
@@ -171,24 +165,60 @@ let validRadio = function validLocation() {
   return false;
 };
 
-// ===> supprimé car bloquait l'execution du code et des tests //
+// location
+function errorMessageLocation() {
+  if (validRadio() == false) {
+    sendMissingLocation.style.display = "flex";
+    return false;
+  } else {
+    sendMissingLocation.style.display = "none";
+    return true;
+  }
+}
+
+function validCgu() {
+  // check if checkbox is checked
+
+  if (!checkBoxCgu.checked) {
+    console.log(false);
+    return false;
+  } else {
+    console.log(true);
+    return true;
+  }
+}
+
+// Cgu
+function errorMessageCgu() {
+  if (validCgu() == false) {
+    sendMissingCgu.style.display = "flex";
+    return false;
+  } else {
+    sendMissingCgu.style.display = "none";
+    return true;
+  }
+}
+
+// ===> Deleted because it was locking the execution of the code and his tests <== //
 /*validRadio.addEventListener("change", function () {
   validQuantity(this);
   validRadio;
 });
 */
-// ===> supprimé car bloquait l'execution du code et des tests //
+// ===> Deleted because it was locking the execution of the code and his tests <== //
 
-let getValue = document.querySelector("input[name='location']:checked");
-
-function getTheValue() {
-  if (getValue != null) {
-    console.log("Une ville à été selectionné, merci");
-  } else {
-    console.log("recommencez");
-    return false;
-  }
-}
+// ===> Deleted because useless for the test of the location : if a city is checked <== //
+// let getValue = document.querySelector("input[name='location']:checked");
+//
+// function getTheValue() {
+//   if (getValue != null) {
+//     console.log("Une ville à été selectionné, merci");
+//   } else {
+//     console.log("recommencez");
+//     return false;
+//   }
+// }
+// ===> Deleted because useless for the test of the location : if a city is checked <== //
 
 // Validation of the checkbox
 
@@ -207,15 +237,3 @@ function validCgu() {
 };
 
 */
-
-function validCgu() {
-  // check if checkbox is checked
-
-  if (!checkBoxCgu.checked) {
-    console.log(false);
-    return false;
-  } else {
-    console.log(true);
-    return true;
-  }
-}

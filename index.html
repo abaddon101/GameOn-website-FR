@@ -26,9 +26,6 @@
         <a href="#"><span>À propos</span></a>
         <a href="#"><span>Contact</span></a>
         <a href="#"><span>Évènements passés</span></a>
-        <a href="javascript:void(0);" class="icon" onclick="editNav()"
-          ><i class="fa fa-bars"></i
-        ></a>
       </div>
     </div>
 
@@ -63,8 +60,8 @@
                   minlength="2"
                 /><br />
                 <span id="missingFirstName"
-                  ><i class="fa-solid fa-triangle-exclamation"></i>
-                  <p>Veuillez rentrer au moins deux lettres</p></span
+                  ><i class="fa-solid fa-triangle-exclamation"></i> Veuillez
+                  rentrer au moins deux lettres</span
                 >
               </div>
 
@@ -79,8 +76,8 @@
                   minlength="2"
                 /><br />
                 <span id="missingLastName"
-                  ><i class="fa-solid fa-triangle-exclamation"></i>
-                  <p>Veuillez rentrer au moins deux lettres</p></span
+                  ><i class="fa-solid fa-triangle-exclamation"></i> Veuillez
+                  rentrer au moins deux lettres</span
                 >
               </div>
 
@@ -94,8 +91,8 @@
                   name="email"
                 /><br />
                 <span id="missingEmail"
-                  ><i class="fa-solid fa-triangle-exclamation"></i>
-                  <p>Veuillez saisir une adresse valide</p></span
+                  ><i class="fa-solid fa-triangle-exclamation"></i> Veuillez
+                  saisir une adresse valide</span
                 >
               </div>
 
@@ -107,11 +104,10 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                  maxlength="8"
                 /><br />
                 <span id="missingBirthdate"
-                  ><i class="fa-solid fa-triangle-exclamation"></i>
-                  <p>Veuillez insérer une date de naissance</p></span
+                  ><i class="fa-solid fa-triangle-exclamation"></i> Veuillez
+                  insérer une date de naissance</span
                 >
               </div>
 
@@ -131,13 +127,13 @@
                 />
                 <span id="missingQuantity"
                   ><i class="fa-solid fa-triangle-exclamation"></i>
-                  <p>
-                    Veuillez indiquez à combien de tournois vous avez déjà
-                    participé
-                  </p></span
-                >
+
+                  Veuillez indiquez à combien de tournois vous avez déjà
+                  participé
+                </span>
               </div>
 
+              <!--Location-->
               <p class="text-label">
                 A quel tournoi souhaitez-vous participer cette année ?
               </p>
@@ -208,11 +204,12 @@
                   ><span class="checkbox-icon"></span>Portland</label
                 >
                 <span id="missingLocation"
-                  ><i class="fa-solid fa-triangle-exclamation"></i>
-                  <p>Veuillez séléctionner une ville</p></span
+                  ><i class="fa-solid fa-triangle-exclamation"></i> Veuillez
+                  séléctionner une ville</span
                 >
               </div>
 
+              <!--Cgu-->
               <div class="formData">
                 <input
                   class="checkbox-input"
@@ -231,6 +228,8 @@
                   id="checkbox2"
                   name="checkbox"
                 />
+
+                <!--Events-->
                 <label class="checkbox2-label" for="checkbox2"
                   ><span class="checkbox-icon"></span>
                   Je souhaite être prévenu des prochains évènements.
@@ -239,17 +238,16 @@
               </div>
               <span id="missingCgu"
                 ><i class="fa-solid fa-triangle-exclamation"></i>
-                <p>
-                  Veuillez accepter les conditions genérales d'utilisation
-                </p></span
-              >
 
+                Veuillez accepter les conditions genérales d'utilisation
+              </span>
               <input id="btn-submit" type="submit" value="C'est parti" />
             </form>
           </div>
         </div>
       </div>
-      <!-- Message activation after validation in the formular-->
+
+      <!-- Activation'message after validation in the formular-->
       <div class="bground2">
         <span class="contentBground2">
           <span class="textContent">Merci pour votre inscription</span>
@@ -257,7 +255,8 @@
         </span>
         <span class="close2"></span>
       </div>
-      <!-- Message activation after validation in the formular-->
+
+      <!-- Activation'message after validation in the formular -->
     </main>
     <footer>
       <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
