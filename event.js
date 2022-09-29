@@ -5,22 +5,8 @@ function showModal() {
 modalBtns.forEach(function (btn) {
   btn.addEventListener("click", showModal);
 });
-
 //Event submit the formular
 formEvenenment.addEventListener("submit", submitFormular);
-
-// Close the modalBg
-function closeModal(e) {
-  modalBg.style.display = "none";
-}
-closeBtn.addEventListener("click", closeModal);
-
-// Close the thanks message
-function hideThanksMessage() {
-  thanksForResa.style.display = "none";
-}
-thanksForResa.addEventListener("click", hideThanksMessage);
-
 // Submitting the formular
 function submitFormular(e) {
   if (
@@ -33,7 +19,6 @@ function submitFormular(e) {
     validCgu() == false
   ) {
     errorMessage();
-
     e.preventDefault();
   } else {
     modalBg.style.display = "none";
@@ -41,11 +26,10 @@ function submitFormular(e) {
     e.preventDefault();
   }
 }
-console.log(formEvenenment.last);
-console.log(formEvenenment.email);
-console.log(radios);
-console.log(formEvenenment.location);
-
+// console.log(formEvenenment.last);
+// console.log(formEvenenment.email);
+// console.log(radios);
+// console.log(formEvenenment.location);
 // Function error'message
 /* Sends the error's message if the field is empty/don't respect the conditions
  and let it go if my fields respect the conditions*/
@@ -58,7 +42,6 @@ function errorMessage() {
   errorMessageLocation();
   errorMessageCgu();
 }
-
 /*Conditions of the functions in the errorMessage Function */
 // firstName
 function errorMessageFirstName() {
@@ -67,12 +50,12 @@ function errorMessageFirstName() {
   errorFieldElement = document.querySelector(errorField);
   console.log(errorFieldElement);
   if (validFirstname(formEvenenment.first) == false) {
-    console.log("flex");
+    console.log(false);
     errorFieldElement.style.display = "flex";
     first.style.border = "2px solid red";
     return false;
   } else {
-    console.log("felx2");
+    console.log(true);
     first.style.border = "none";
     errorFieldElement.style.display = "none";
     return true;
@@ -90,7 +73,6 @@ function errorMessageLastName() {
     return true;
   }
 }
-
 // email
 function errorMessageEmail() {
   if (formEvenenment.email.value == "") {
@@ -103,7 +85,6 @@ function errorMessageEmail() {
     return true;
   }
 }
-
 // birthDate
 function errorMessageBirthDate() {
   if (formEvenenment.birthdate.value == "") {
@@ -116,7 +97,6 @@ function errorMessageBirthDate() {
     return true;
   }
 }
-
 // quantity
 function errorMessageQuantity() {
   if (formEvenenment.quantity.value == "") {
@@ -129,6 +109,55 @@ function errorMessageQuantity() {
     return true;
   }
 }
+// location
+let validRadio = function validLocation() {
+  for (let i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      console.log(true);
+      return true;
+    }
+  }
+  console.log(false);
+  return false;
+};
+function errorMessageLocation() {
+  if (validRadio() == false) {
+    sendMissingLocation.style.display = "flex";
+    return false;
+  } else {
+    sendMissingLocation.style.display = "none";
+    return true;
+  }
+}
+// Cgu
+function validCgu() {
+  if (!checkBoxCgu.checked) {
+    console.log(false);
+    return false;
+  } else {
+    console.log(true);
+    return true;
+  }
+}
+function errorMessageCgu() {
+  if (validCgu() == false) {
+    sendMissingCgu.style.display = "flex";
+    return false;
+  } else {
+    sendMissingCgu.style.display = "none";
+    return true;
+  }
+}
+// Close the modalBg
+function closeModal(e) {
+  modalBg.style.display = "none";
+}
+closeBtn.addEventListener("click", closeModal);
+// Close the thanks message
+function hideThanksMessage() {
+  thanksForResa.style.display = "none";
+}
+thanksForResa.addEventListener("click", hideThanksMessage);
 
 // Validation of radios button
 /* We Need to create a variable validRadio, his value will be the function validLocation
@@ -154,51 +183,6 @@ With a "for" with a variable,
 // }
 // ===> Deleted because useless for the test of the location : if a city is checked <== //
 
-let validRadio = function validLocation() {
-  for (let i = 0; i < radios.length; i++) {
-    if (radios[i].checked) {
-      console.log(true);
-      return true;
-    }
-  }
-  console.log(false);
-  return false;
-};
-
-// location
-function errorMessageLocation() {
-  if (validRadio() == false) {
-    sendMissingLocation.style.display = "flex";
-    return false;
-  } else {
-    sendMissingLocation.style.display = "none";
-    return true;
-  }
-}
-
-function validCgu() {
-  // check if checkbox is checked
-
-  if (!checkBoxCgu.checked) {
-    console.log(false);
-    return false;
-  } else {
-    console.log(true);
-    return true;
-  }
-}
-
-// Cgu
-function errorMessageCgu() {
-  if (validCgu() == false) {
-    sendMissingCgu.style.display = "flex";
-    return false;
-  } else {
-    sendMissingCgu.style.display = "none";
-    return true;
-  }
-}
-
 // ===> Deleted because it was locking the execution of the code and his tests <== //
 /*validRadio.addEventListener("change", function () {
   validQuantity(this);
@@ -221,7 +205,6 @@ function errorMessageCgu() {
 // ===> Deleted because useless for the test of the location : if a city is checked <== //
 
 // Validation of the checkbox
-
 /*let checked = document.querySelector("#checkbox1:checked");
 console.log(checked);
 
@@ -235,5 +218,4 @@ function validCgu() {
     return false;
   }
 };
-
 */
