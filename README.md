@@ -11,4 +11,3 @@ Taches
     Etape 3 - Ajouter validation ou messages d'erreur
     Etape 4 - Ajouter confirmation quand envoi réussi
     Etape 5 - Tests manuels
-
